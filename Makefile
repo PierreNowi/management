@@ -6,7 +6,7 @@ all:    netids-fc.txt netids-cms.txt \
 
 # -- Generate data file and self-assessment plots for HW0
 
-hw0.yml:
+hw0.yml: hw0walk.py
 	python hw0walk.py
 
 plots: hw0.yml hw0plot.py

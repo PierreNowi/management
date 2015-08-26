@@ -70,6 +70,7 @@ def walk_submissions(dir):
         for file in files:
             if file == 'hw0.txt':
                 recs.append(process_hw0("{0}/{1}".format(root, file)))
+    return recs
 
 
 if __name__ == "__main__":
