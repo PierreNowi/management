@@ -30,7 +30,8 @@ drops.txt: netids-fc.txt netids-cms.txt
 		grep -- "^-[a-z]" | sed 's/-//g' > drops.txt
 
 netids-cfs.txt: netids-fc.txt
-	awk '{ print $$1 "@cornell.edu;" }' netids-fc.txt > netids-cfs.txt
+	awk '{ print $$1 "@cornell.edu;" }' \
+		netids-fc.txt netids-ta.txt | sort > netids-cfs.txt
 
 adds-cfs.txt: adds.txt
 	awk '{ print $$1 "@cornell.edu;" }' adds.txt > adds-cfs.txt
