@@ -56,17 +56,17 @@ def process_hw0(path):
     return rec
 
 
-def walk_submissions(dir):
+def walk_submissions(path):
     """Process all HW0 files under CMS submissions folder
 
     Args:
-        dir (string): path to submissions directory
+        path (string): path to submissions directory
 
     Returns:
         list of hw0 records
     """
     recs = []
-    for root, dirs, files in os.walk("Submissions"):
+    for root, dirs, files in os.walk(path):
         for file in files:
             if file == 'hw0.txt':
                 recs.append(process_hw0("{0}/{1}".format(root, file)))
