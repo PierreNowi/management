@@ -21,7 +21,8 @@ def gather_scores(recs, name):
     """
     scores = np.zeros(5)
     for rec in recs:
-        scores[int(rec[name]-1)] += 1
+        if name in rec:
+            scores[int(rec[name]-1)] += 1
     return scores
 
 
