@@ -69,7 +69,10 @@ def walk_submissions(path):
     for root, dirs, files in os.walk(path):
         for file in files:
             if file == 'hw0.txt':
-                recs.append(process_hw0("{0}/{1}".format(root, file)))
+                try:
+                    recs.append(process_hw0("{0}/{1}".format(root, file)))
+                except:
+                    print('Issue with {0}'.format(root))
     return recs
 
 
