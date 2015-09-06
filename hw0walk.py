@@ -52,7 +52,10 @@ def process_hw0(path):
             for k, v in score_attr.items():
                 if line.find(v) == 0:
                     field = re.search(":\s*(.*)$", line).group(1)
-                    rec[k] = math.floor(float(field))
+                    try:
+                        rec[k] = math.floor(float(field))
+                    except ValueError:
+                        print("Could not convert {0}: {1}={2}".format(path, k, field))
     return rec
 
 
