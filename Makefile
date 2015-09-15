@@ -1,8 +1,15 @@
-.PHONY: all plots clean
+.PHONY: all plots picker clean
 
 all:    netids-fc.txt netids-cms.txt \
 	adds.txt drops.txt \
 	adds-cfs.txt drops-cfs.txt
+
+
+# -- Picker
+
+picker:
+	python picker.py
+
 
 # -- Generate data file and self-assessment plots for HW0
 
