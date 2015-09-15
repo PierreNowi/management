@@ -38,7 +38,7 @@ class ClassCheck(object):
             if 'drop' not in rec and rec['status'] == 'enrolled':
                 netid = rec['netid']
                 count = len(inclass[netid]) if netid in inclass else 0
-                entry = (count, len(rec), netid)
+                entry = (count, len(recs), netid)
                 self._name[netid] = rec['name'] if 'name' in rec else netid
                 heapq.heappush(self._queue, entry)
         self._choice = heapq.heappop(self._queue)
